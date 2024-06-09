@@ -5,7 +5,7 @@ ib = IB()
 ib.connect('127.0.0.1', 7497, clientId=14)
 
 
-contract = Crypto('BTC','PAXOS','USD')
+contract = Contract(secType='OPT',symbol='BANKNIFTY',lastTradeDateOrContractMonth='20240626',strike=49700,right='CALL',exchange='NSE',currency='INR')
 
 
 bars = ib.reqHistoricalData(
@@ -16,6 +16,6 @@ bars = ib.reqHistoricalData(
         whatToShow='MIDPOINT',
         useRTH=True,
         formatDate=1)
-
-df = util.df(bars)
-print(df)
+print(bars)
+# df = util.df(bars)
+# print(df)
