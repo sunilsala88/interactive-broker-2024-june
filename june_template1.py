@@ -21,7 +21,7 @@ print(contract_objects)
 def get_historical_data(ticker_contract):
     bars = ib.reqHistoricalData(
     ticker_contract, endDateTime='', durationStr='10 D',
-    barSizeSetting='1 min', whatToShow='MIDPOINT', useRTH=True)
+    barSizeSetting='1 min', whatToShow='MIDPOINT', useRTH=True,formatDate=2)
     # convert to pandas dataframe:
     df = util.df(bars)
     # print(df)
