@@ -27,6 +27,7 @@ def get_historical_data(ticker_contract):
     # print(df)
     df['sma1']=ta.sma(df.close,20)
     df['sma2']=ta.sma(df.close,50)
+    
     return df
 
 
@@ -52,8 +53,6 @@ def main_strategy_code():
     for ticker in tickers:
         print('ticker name is',ticker,'################')
         ticker_contract=contract_objects[ticker]
-
-
         hist_df=get_historical_data(ticker_contract)
         print(hist_df)
         print(hist_df.close.iloc[-1])
